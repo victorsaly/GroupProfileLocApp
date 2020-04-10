@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{186B8958
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1A3118C4-8458-433A-A896-707E4B2490A7}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ProfileFinder.App", "ProfileFinder.App\ProfileFinder.App.njsproj", "{75831557-5C5C-4B61-93A0-742B2437E580}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{2A000CCB-2BC0-4368-A12B-6FF00BA69F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A000CCB-2BC0-4368-A12B-6FF00BA69F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A000CCB-2BC0-4368-A12B-6FF00BA69F29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75831557-5C5C-4B61-93A0-742B2437E580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75831557-5C5C-4B61-93A0-742B2437E580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75831557-5C5C-4B61-93A0-742B2437E580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75831557-5C5C-4B61-93A0-742B2437E580}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{806C9E98-BCA8-4E9C-87E9-177D3F04BCD1} = {08485AD1-56AE-472E-8A5A-EBDD8FFE22EA}
 		{DC307049-6AD3-45E1-8B25-49D2A0B45DC2} = {A112C500-8181-4CE5-934A-80979187EB07}
 		{2A000CCB-2BC0-4368-A12B-6FF00BA69F29} = {186B8958-F3EE-458E-B5ED-4F6C19F083AB}
+		{75831557-5C5C-4B61-93A0-742B2437E580} = {A112C500-8181-4CE5-934A-80979187EB07}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F01C87A-E0A1-4ED2-A1E8-062DB4289A83}

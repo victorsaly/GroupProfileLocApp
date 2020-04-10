@@ -1,0 +1,9 @@
+{
+  "name": "profile-finder.app",
+  "version": "0.0.0",
+  "description": "ProfileFinder.App",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}
