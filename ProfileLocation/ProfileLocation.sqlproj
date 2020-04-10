@@ -59,6 +59,10 @@
     <Folder Include="dbo" />
     <Folder Include="PostDeployment" />
     <Folder Include="PostDeployment\LookupTables" />
+    <Folder Include="tests" />
+    <Folder Include="tests\Stored Procedures" />
+    <Folder Include="security" />
+    <Folder Include="security\schemas" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Group.sql" />
@@ -68,6 +72,11 @@
     <Build Include="dbo\SocialType.sql" />
     <Build Include="dbo\ProfileGroup.sql" />
     <PostDeploy Include="PostDeployment\Script.PostDeployment.sql" />
+    <Build Include="tests\Stored Procedures\CheckDefaultValues.sql" />
+    <Build Include="tests\Stored Procedures\CheckDuplicateForeignKeys.sql" />
+    <Build Include="tests\Stored Procedures\CheckForeignKeys.sql" />
+    <Build Include="tests\Stored Procedures\CheckIdentityColumns.sql" />
+    <Build Include="tests\Stored Procedures\CheckPrimaryKeys.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="ProfileLocation.refactorlog" />
@@ -75,5 +84,13 @@
   <ItemGroup>
     <None Include="PostDeployment\LookupTables\AddSocialTypes.sql" />
     <None Include="ProfileLocation.publish.xml" />
+    <Build Include="security\schemas\Tests.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
   </ItemGroup>
 </Project>
