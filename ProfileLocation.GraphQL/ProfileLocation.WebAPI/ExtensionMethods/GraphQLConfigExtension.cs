@@ -36,6 +36,8 @@ namespace ProfileLocation.WebAPI.ExtensionMethods
                 .AddWebSockets()
                 .AddDataLoader();
 
+
+
             GraphTypeTypeRegistry.Register<short, ShortGraphType>();
             GraphTypeTypeRegistry.Register<DateTime, DateTimeGraphType>();
         }

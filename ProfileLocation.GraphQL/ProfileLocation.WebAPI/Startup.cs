@@ -63,20 +63,20 @@ namespace ProfileLocation.WebAPI
             services.AddGraphQLConfig();
             services.AddProfileLocationConfig(Environment, Configuration);
 
-            services.AddAuthentication("Bearer")
-                .AddJwtBearer(options =>
-                {
-                    options.Authority = Configuration.GetSection("Security:IDServer").Get<string>();
-#if DEBUG
-                    options.RequireHttpsMetadata = false;
-#endif
-                    //TODO Clarify this
-                    options.Audience = Configuration.GetSection("Security:ApplicationName").Get<string>();
-                    options.TokenValidationParameters = new TokenValidationParameters()
-                    {
-                        NameClaimType = "name"
-                    };
-                });
+//            services.AddAuthentication("Bearer")
+//                .AddJwtBearer(options =>
+//                {
+//                    options.Authority = Configuration.GetSection("Security:IDServer").Get<string>();
+//#if DEBUG
+//                    options.RequireHttpsMetadata = false;
+//#endif
+//                    //TODO Clarify this
+//                    options.Audience = Configuration.GetSection("Security:ApplicationName").Get<string>();
+//                    options.TokenValidationParameters = new TokenValidationParameters()
+//                    {
+//                        NameClaimType = "name"
+//                    };
+//                });
 
 
             // Reset for Unit Test

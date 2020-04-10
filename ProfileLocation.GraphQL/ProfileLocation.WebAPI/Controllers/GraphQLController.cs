@@ -19,7 +19,6 @@ using ProfileLocation.WebAPI.Models.GraphQL;
 
 namespace ProfileLocation.WebAPI.Controllers
 {
-    [Authorize]
     public class GraphQLController : Controller
     {
         private readonly ProfileLocationSchema _schema;
@@ -62,22 +61,7 @@ namespace ProfileLocation.WebAPI.Controllers
         [AllowAnonymous]
         public Task<IActionResult> Index()
         {
-            var clientId = _configuration.GetSection("Security:ApplicationName").Get<string>();
-            var scopes = _configuration.GetSection("Security:Scopes").Get<List<string>>();
-            var idServer = _configuration.GetSection("Security:IDServer").Get<string>();
-            
-            if (clientId == null || scopes == null || !scopes.Any() || idServer == null) throw new ArgumentException("Invalid config in security section in appsettings");
-
-            var returnUrl = $"{Request.Scheme}://{Request.Host}{Request.PathBase}/GraphQL/UIAuth";
-
-            return Task.FromResult((IActionResult) Redirect($"{idServer}connect/authorize?client_id={clientId}&redirect_uri={returnUrl}&scope={string.Join(" ", scopes)}&nonce={DateTime.Now.Ticks}&response_type=token&response_mode=form_post"));
-        }
-
-        [HttpPost]
-        [AllowAnonymous]
-        public Task<IActionResult> UIAuth([FromForm] string access_token, string token_type, int expires_in, string scope)
-        {
-            return Task.FromResult((IActionResult) View("QLPlayground", access_token));
+            return Task.FromResult((IActionResult)View("QLPlayground", null));
         }
 
         private ErrorModel GetErrorModel(Exception e)
