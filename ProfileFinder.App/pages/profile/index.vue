@@ -37,27 +37,37 @@
       </div>
     </div>
     <p>{{ currentLoc.coords }}</p>
-
-    <button type="submit" class="group relative w-full flex justify-center py-4 px-6 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-800 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition duration-150 ease-in-out">
+    <VuePhoneNumberInput
+      id="phoneNumber1"
+      v-model="phoneNumber"
+      clearable
+      @update="onUpdate"
+    />
+    <button type="submit" class="group relative w-full flex justify-center my-8 py-4 px-6 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-800 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition duration-150 ease-in-out">
       SAVE PROFILE
     </button>
   </div>
 </template>
 <script>
-const ipp = require('instagram-profile-picture')
+import VuePhoneNumberInput from 'vue-phone-number-input'
+import 'vue-phone-number-input/dist/vue-phone-number-input.css'
 export default {
+  components: {
+    VuePhoneNumberInput
+  },
   data () {
     return {
       currentLoc: {},
-      maplocation: { lng: 0, lat: 0 }
+      maplocation: { lng: 0, lat: 0 },
+      phoneNumber: null,
+      results: null
     }
   },
   methods: {
+    onUpdate (payload) {
+      this.results = payload
+    },
     async onClickCurrent () {
-      ipp.small('9gag').then((user) => {
-        console.log(user)
-        // => https://scontent-sit4-1.cdninstagram.com/7...jpg
-      })
       console.log('--onClickCurrent')
       try {
         const data = await getPosition()
