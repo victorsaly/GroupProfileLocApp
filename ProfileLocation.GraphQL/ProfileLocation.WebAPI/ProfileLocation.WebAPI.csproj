@@ -38,6 +38,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProfileLocation.Data.EF\ProfileLocation.Data.EF.csproj" />
+    <ProjectReference Include="..\ProfileLocation.Managers\ProfileLocation.Managers.csproj" />
     <ProjectReference Include="..\ProfileLocation.Services.ORM\ProfileLocation.Services.ORM.csproj" />
     <ProjectReference Include="..\ProfileLocation.Domain.ORM\ProfileLocation.Domain.ORM.csproj" />
   </ItemGroup>

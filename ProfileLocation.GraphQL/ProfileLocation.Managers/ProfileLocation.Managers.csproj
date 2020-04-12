@@ -10,10 +10,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="OpenGraph-Net" Version="3.2.4" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ProfileLocation.Domain.Managers\ProfileLocation.Domain.Managers.csproj" />
+    <ProjectReference Include="..\ProfileLocation.Domain.ORM\ProfileLocation.Domain.ORM.csproj" />
   </ItemGroup>
 
 </Project>
