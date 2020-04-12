@@ -13,8 +13,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "instagram-profile-picture": "^1.0.5",
     "nuxt": "^2.0.0",
-    "@nuxtjs/pwa": "^3.0.0-0"
+    "open-graph": "^0.2.4"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0",
