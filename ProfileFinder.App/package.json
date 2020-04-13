@@ -5,7 +5,7 @@
   "author": "Victor Saly",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "cross-env NUXT_HOST=0.0.0.0 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -14,21 +14,20 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.0-0",
-    "axios": "^0.19.2",
     "instagram-profile-picture": "^1.0.5",
     "nuxt": "^2.0.0",
-    "open-graph": "^0.2.4",
     "vue-phone-number-input": "^1.1.6"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^1.0.0",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/tailwindcss": "^1.0.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "@vue/test-utils": "^1.0.0-beta.27",
-    "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
     "vue-jest": "^4.0.0-0"
   }
