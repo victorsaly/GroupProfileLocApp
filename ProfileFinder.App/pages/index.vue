@@ -16,14 +16,20 @@
     </div>
 
     <div class="relative inline-block text-left w-full mb-2">
-      <div class="shadow-sm">
+      <div class="shadow-sm label-floating">
         <input type="text" placeholder="Group Name" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
+        <label class="hidden" for="password">
+          Password
+        </label>
       </div>
     </div>
 
     <div class="relative inline-block text-left w-full mb-2">
-      <div class="shadow-sm">
-        <input type="password" placeholder="Password" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
+      <div class="shadow-sm label-floating">
+        <input type="password" name="password" placeholder="Password" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
+        <label class="hidden" for="password">
+          Group name
+        </label>
       </div>
     </div>
 
