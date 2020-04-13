@@ -48,7 +48,7 @@
       <div class="shadow-sm w-full">
         <input v-model="profile.instagramProfile" type="text" placeholder="Instagram profile" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150" @keyup="geInstagramImage">
       </div>
-      <div v-if="instagramImageUrl" class="flex items-center justify-center border border-gray-300 ml-1" style="width: 54px;">
+      <div v-if="instagramImageUrl" class="flex items-center justify-center border border-gray-300 ml-1 px-1" style="width: 58px;">
         <img :src="instagramImageUrl" alt="instagram-profile">
       </div>
     </div>
