@@ -54,33 +54,76 @@
     <p>{{ currentLoc.coords }}</p>
     <VuePhoneNumberInput
       id="phoneNumber1"
-      v-model="phoneNumber"
+      v-model="profile.phoneNumber"
+      class="mb-2"
       clearable
       @update="onUpdate"
     />
-    <button type="submit" class="group relative w-full flex justify-center my-8 py-4 px-6 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-800 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition duration-150 ease-in-out">
+
+    <div class="flex">
+      <div class="shadow-sm w-full">
+        <input v-model="profile.instagramProfile" type="text" placeholder="Instagram profile" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150" @keyup="geInstagramImage">
+      </div>
+      <div v-if="instagramImageUrl" class="flex items-center justify-center border border-gray-300 ml-1 px-1" style="width: 58px;">
+        <img :src="instagramImageUrl" alt="instagram-profile">
+      </div>
+    </div>
+
+    <button type="submit" class="group relative w-full flex justify-center my-8 py-4 px-6 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-800 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition duration-150 ease-in-out" @click="onSaveProfileClick">
       SAVE PROFILE
     </button>
   </div>
 </template>
 <script>
+
 import VuePhoneNumberInput from 'vue-phone-number-input'
 import 'vue-phone-number-input/dist/vue-phone-number-input.css'
+import axios from 'axios'
+import gql from 'graphql-tag'
+
+const getImage = gql`
+  query getPersonProfileImage($url: String!) {
+    openGraphManager_GetOpenGraph(url: $url){
+      title
+      image
+  }
+}`
+
 export default {
   components: {
     VuePhoneNumberInput
   },
   data () {
     return {
-      currentLoc: {},
-      maplocation: { lng: 0, lat: 0 },
-      phoneNumber: null,
-      results: null
+      profile: {
+        fullName: null,
+        email: null,
+        country: null,
+        phoneNumber: null,
+        password: null,
+        instagramProfile: null
+      },
+      instagramImageUrl: null,
+      defaultCountryCode: null
     }
   },
   methods: {
-    onUpdate (payload) {
-      this.results = payload
+    geInstagramImage () {
+      // todo: add debounce
+      this.$apollo.query({ query: getImage, variables: { url: `http://instagram.com/${this.profile.instagramProfile}` } })
+        .then((res) => {
+          this.instagramImageUrl = res.data.openGraphManager_GetOpenGraph.image
+        })
+        .catch(console.error)
+    },
+    getCurrentPersonLocation () {
+      axios.get('https://ip2c.org/s')
+        .then(({ data }) => {
+          const [, countryCode,, countryName] = data.split(';')
+          this.defaultCountryCode = countryCode
+          this.profile.country = countryName
+        })
+        .catch(console.error)
     },
     async onClickCurrent () {
       console.log('--onClickCurrent')
