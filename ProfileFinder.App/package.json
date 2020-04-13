@@ -13,8 +13,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc19",
     "@nuxtjs/pwa": "^3.0.0-0",
     "axios": "^0.19.2",
+    "graphql-tag": "^2.10.3",
     "instagram-profile-picture": "^1.0.5",
     "nuxt": "^2.0.0",
     "open-graph": "^0.2.4",
