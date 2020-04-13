@@ -89,12 +89,6 @@ export default {
       defaultCountryCode: null
     }
   },
-  watch: {
-    profile (val) {
-      console.log('val: ', val)
-    },
-    deep: true
-  },
   mounted () {
     this.getCurrentPersonLocation()
   },
