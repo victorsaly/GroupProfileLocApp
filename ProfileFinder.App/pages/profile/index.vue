@@ -1,26 +1,26 @@
 <template>
   <div>
     <div class="relative inline-block text-left w-full mb-2">
-      <div class="shadow-sm  label-floating">
-        <input type="text" placeholder="Full Name" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
-        <label class="hidden" for="Name">
+      <div class="shadow-sm label-floating">
+        <input v-model="profile.fullName" type="text" placeholder="Full Name" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
+        <label class="hidden" for="FullName">
           Full Name
         </label>
       </div>
     </div>
 
     <div class="relative inline-block text-left w-full mb-2">
-      <div class="shadow-sm  label-floating">
-        <input type="email" placeholder="Email" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
-        <label class="hidden" for="email">
+      <div class="shadow-sm label-floating">
+        <input v-model="profile.email" type="email" placeholder="Email" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
+        <label class="hidden" for="Email">
           Email
         </label>
       </div>
     </div>
 
     <div class="relative inline-block text-left w-full mb-2">
-      <div class="shadow-sm  label-floating">
-        <input type="password" placeholder="Password" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
+      <div class="shadow-sm label-floating">
+        <input v-model="profile.password" type="password" placeholder="Password" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
         <label class="hidden" for="Password">
           Password
         </label>
@@ -29,7 +29,7 @@
 
     <div class="relative inline-block text-left w-full mb-2">
       <div class="shadow-sm label-floating">
-        <input type="text" placeholder="City" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
+        <input v-model="profile.city" type="text" placeholder="City" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
         <label class="hidden" for="City">
           City
         </label>
@@ -39,11 +39,11 @@
     <div class="relative inline-block text-left w-full mb-2">
       <div class="shadow-sm">
         <div class="flex flex-row label-floating">
-          <input type="text" placeholder="Country" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
-          <label class="hidden" for="City">
+          <input v-model="profile.country" type="text" placeholder="Country" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150">
+          <label class="hidden" for="Country">
             Country
           </label>
-          <button type="submit" class="group relative w-20 flex-1 justify-center px-3 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-800 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition duration-150 ease-in-out" @click="onClickCurrent">
+          <button type="submit" class="group relative w-20 flex-1 justify-center px-3 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-800 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition duration-150 ease-in-out" @click="getCurrentPersonLocation">
             <svg class="h-10 w-8 fill-current mx-auto" viewBox="0 0 24 24">
               <path class="heroicon-ui" d="M5.64 16.36a9 9 0 1 1 12.72 0l-5.65 5.66a1 1 0 0 1-1.42 0l-5.65-5.66zm11.31-1.41a7 7 0 1 0-9.9 0L12 19.9l4.95-4.95zM12 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
             </svg>
@@ -51,18 +51,20 @@
         </div>
       </div>
     </div>
-    <p>{{ currentLoc.coords }}</p>
     <VuePhoneNumberInput
       id="phoneNumber1"
       v-model="profile.phoneNumber"
       class="mb-2"
       clearable
-      @update="onUpdate"
+      :default-country-code="defaultCountryCode"
     />
 
-    <div class="flex">
-      <div class="shadow-sm w-full">
+    <div class="flex relative inline-block text-left w-full mb-2">
+      <div class="shadow-sm w-full label-floating">
         <input v-model="profile.instagramProfile" type="text" placeholder="Instagram profile" class="flex w-full border border-gray-300 px-6 py-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150" @keyup="geInstagramImage">
+        <label class="hidden" for="InstagramProfile">
+          Instagram Profile
+        </label>
       </div>
       <div v-if="instagramImageUrl" class="flex items-center justify-center border border-gray-300 ml-1 px-1" style="width: 58px;">
         <img :src="instagramImageUrl" alt="instagram-profile">
@@ -90,9 +92,7 @@ const getImage = gql`
 }`
 
 export default {
-  components: {
-    VuePhoneNumberInput
-  },
+  components: { VuePhoneNumberInput },
   data () {
     return {
       profile: {
@@ -106,6 +106,9 @@ export default {
       instagramImageUrl: null,
       defaultCountryCode: null
     }
+  },
+  mounted () {
+    this.getCurrentPersonLocation()
   },
   methods: {
     geInstagramImage () {
@@ -125,40 +128,9 @@ export default {
         })
         .catch(console.error)
     },
-    async onClickCurrent () {
-      console.log('--onClickCurrent')
-      try {
-        const data = await getPosition()
-        console.log('--success', data)
-        console.log('typeof', typeof (data))
-
-        const data2 = {}
-        data2.lat = data.coords.latitude
-        data2.lng = data.coords.longitude
-        data2.alt = data.coords.altitude
-        data2.accLatlng = data.coords.accuracy
-        data2.accAlt = data.coords.altitudeAccuracy
-        data2.heading = data.coords.heading // 0=北,90=東,180=南,270=西
-        data2.speed = data.coords.speed
-
-        // Object.assign(data2,data.coords); // not work
-        // this.$set(this.currentLoc,"data2",data.coords);//not work
-        console.log('data2', data2)
-        this.$set(this.currentLoc, 'coords', data2)
-        // https://geocode.xyz/51.6554752,-0.3833856?geoit=json
-        // set Googlemap
-        this.maplocation.lat = data2.lat
-        this.maplocation.lng = data2.lng
-        this.$refs.mmm.panTo(this.maplocation)
-      } catch (e) {
-        console.log('--error', e)
-      }
+    onSaveProfileClick () {
+      console.log('onSaveProfileClick')
     }
   }
-}
-const getPosition = function (options) {
-  return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(resolve, reject, options)
-  })
 }
 </script>
