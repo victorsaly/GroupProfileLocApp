@@ -1,0 +1,12 @@
+{
+  "eslint.workingDirectories": [
+    "ProfileFinder.App"
+  ],
+  "eslint.validate": [
+    "javascript", "javascriptreact",
+    { "language": "vue", "autoFix": true },
+    { "language": "html", "autoFix": true },
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ]
+}
