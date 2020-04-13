@@ -94,6 +94,7 @@ export default {
   },
   methods: {
     geInstagramImage () {
+      // todo: add debounce
       this.$apollo.query({ query: getImage, variables: { url: `http://instagram.com/${this.profile.instagramProfile}` } })
         .then((res) => {
           this.instagramImageUrl = res.data.openGraphManager_GetOpenGraph.image
