@@ -98,6 +98,7 @@ export default {
         .then((res) => {
           this.instagramImageUrl = res.data.openGraphManager_GetOpenGraph.image
         })
+        .catch(console.error)
     },
     getCurrentPersonLocation () {
       axios.get('https://ip2c.org/s')
