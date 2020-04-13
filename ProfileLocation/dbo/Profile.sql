@@ -10,6 +10,7 @@
 	[Mobile] [varchar](250) NULL,
 	[LocationId] [int] NULL,
 	[PhotoURL] [varchar](250) NULL,
+	[PhotoEmbedded] VARCHAR(MAX) null,
 	[IsApproved] [bit] NOT NULL DEFAULT 0,
 	[IsAdmin] [bit] NOT NULL DEFAULT 0,
 	[IsActive] [bit] NOT NULL DEFAULT 0, 
