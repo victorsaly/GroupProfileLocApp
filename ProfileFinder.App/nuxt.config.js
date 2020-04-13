@@ -42,8 +42,17 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/apollo',
     '@nuxtjs/pwa'
   ],
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'https://profilelocationwebapi.azurewebsites.net',
+        getAuth: () => 'Bearer my-static-token' // use this method to overwrite functions
+      }
+    }
+  },
   /*
   ** Build configuration
   */
