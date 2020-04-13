@@ -14,4 +14,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="iconURL" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="cace9267-2d59-4eba-ac73-09af014a667d" ChangeDateTime="04/13/2020 09:13:01">
+    <Property Name="ElementName" Value="[dbo].[Profile].[PhotoEmbeded]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Profile]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PhotoEmbedded" />
+  </Operation>
 </Operations>

@@ -85,6 +85,9 @@
     <None Include="PostDeployment\LookupTables\AddSocialTypes.sql" />
     <None Include="ProfileLocation.publish.xml" />
     <Build Include="security\schemas\Tests.sql" />
+    <None Include="PostDeployment\LookupTables\AddDummyData.sql" />
+    <None Include="ProfileLocation_1.publish.xml" />
+    <None Include="ProfileLocation_azure.publish.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
