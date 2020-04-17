@@ -1,4 +1,5 @@
 
+require('dotenv').config()
 export default {
   mode: 'universal',
   /*
@@ -43,12 +44,13 @@ export default {
   */
   modules: [
     '@nuxtjs/apollo',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/firebase'
   ],
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'https://profilelocationwebapi.azurewebsites.net',
+        httpEndpoint: process.env.API_GRAPHQL_ENDPOINT,
         getAuth: () => 'Bearer my-static-token' // use this method to overwrite functions
       }
     }
@@ -61,6 +63,43 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    }
+  },
+  firebase: {
+    config: {
+      development: {
+        apiKey: process.env.FIREBASE_API_KEY,
+        authDomain: 'https://accounts.google.com/o/oauth2/auth',
+        projectId: process.env.FIREBASE_PROJECTID,
+        appId: process.env.FIREBASE_APPID
+      }
+    },
+    performance: true,
+    analytics: true,
+    services: {
+      auth: {
+        initialize: {
+          onAuthStateChangedAction: 'onAuthStateChanged'
+        },
+        ssr: true
+      }
+    }
+  },
+  pwa: {
+    // disable the modules you don't need
+    meta: false,
+    icon: false,
+    // if you omit a module key form configuration sensible defaults will be applied
+    // manifest: false,
+
+    workbox: {
+      importScripts: [
+        // ...
+        '/firebase-auth-sw.js'
+      ],
+      // by default the workbox module will not install the service worker in dev environment to avoid conflicts with HMR
+      // only set this true for testing and remember to always clear your browser cache in development
+      dev: false
     }
   }
 }

@@ -1,4 +1,4 @@
-const options = {"firebaseVersion":"7.13.2","config":{"apiKey":"AIzaSyCIUlcV48Ii9KS2hbnHBHeI8UO4nMJJi4A","authDomain":"https:\u002F\u002Faccounts.google.com\u002Fo\u002Foauth2\u002Fauth","projectId":"profilefinderapp","appId":"1:734681479771:web:14c69b96c49ae4237b5d7e"},"onFirebaseHosting":false,"ignorePaths":["\u002F__webpack_hmr","\u002F_loading","\u002F_nuxt\u002F"]}
+const options = {"firebaseVersion":"7.13.2","config":{"apiKey":undefined,"authDomain":"https:\u002F\u002Faccounts.google.com\u002Fo\u002Foauth2\u002Fauth","projectId":undefined,"appId":undefined},"onFirebaseHosting":false,"ignorePaths":["\u002F__webpack_hmr","\u002F_loading","\u002F_nuxt\u002F"]}
 const version = options.firebaseVersion
 const onFirebaseHosting = options.onFirebaseHosting
 const ignorePaths = options.ignorePaths
