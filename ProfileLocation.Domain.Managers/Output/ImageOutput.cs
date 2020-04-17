@@ -4,11 +4,12 @@ using System.Text;
 
 namespace ProfileLocation.Domain.Managers.Output
 {
-    public class OpenGraphProfileOutput
+    public class ImageOutput
     {
         public string Image { get; set; }
-
         public string ImageBase64 { get; set; }
         public string Title { get; set; }
     }
+
+
 }
