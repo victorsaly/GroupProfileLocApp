@@ -360,3 +360,5 @@ MigrationBackup/
 */appsettings*
 **/*appsettings.Development.json
 **/*appsettings.json
+
+**/*firebase-auth-sw.js
