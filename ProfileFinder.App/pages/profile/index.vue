@@ -73,7 +73,7 @@
           Instagram Profile
         </label>
       </div>
-      <div class="flex items-center justify-center border border-gray-300 ml-1 px-1" style="width: 58px;">
+      <div v-if="instagramImageUrl" class="flex items-center justify-center border border-gray-300 ml-1 px-1" style="width: 58px;">
         <img :src="instagramImageUrl" alt="instagram-profile">
       </div>
     </div>
