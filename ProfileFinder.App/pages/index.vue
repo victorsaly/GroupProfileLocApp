@@ -32,7 +32,6 @@
         </label>
       </div>
     </div>
-
     <button type="submit" class="group relative w-full flex justify-center py-4 px-6 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-800 hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-indigo active:bg-gray-700 transition duration-150 ease-in-out">
       VIEW PROFILES
     </button>
